@@ -1,0 +1,23 @@
+{
+    "name": "condense/laravel-sdk",
+    "description": "Laravel SDK for Condense Logs",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Leo Sjöberg",
+            "email": "leo.sjoberg@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^8.61",
+        "guzzlehttp/guzzle": "^7.3",
+        "monolog/monolog": "^2.0",
+        "ramsey/uuid": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Condense\\": "src/"
+        }
+    }
+}
