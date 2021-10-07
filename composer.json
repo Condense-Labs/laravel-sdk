@@ -13,7 +13,8 @@
         "illuminate/support": "^8.61",
         "guzzlehttp/guzzle": "^7.3",
         "monolog/monolog": "^2.0",
-        "ramsey/uuid": "^4.0"
+        "ramsey/uuid": "^4.0",
+        "illuminate/http": "^8.63"
     },
     "autoload": {
         "psr-4": {

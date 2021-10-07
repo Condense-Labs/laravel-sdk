@@ -2,11 +2,10 @@
 
 namespace Condense;
 
-use Decahedron\StickyLogging\StickyContext;
+use Ramsey\Uuid\Uuid;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
-use Ramsey\Uuid\Uuid;
 
 class RequestMiddleware
 {
@@ -22,6 +21,7 @@ class RequestMiddleware
                 'path' => $request->path(),
                 'method' => $request->method(),
                 'data' => $request->input(),
+                'query' => $request->query(),
                 'headers' => $request->headers->all(),
             ]
         ]);
