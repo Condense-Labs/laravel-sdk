@@ -4,6 +4,7 @@ namespace Condense;
 
 use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
+use Monolog\Handler\BufferHandler;
 
 class CondenseServiceProvider extends ServiceProvider
 {
@@ -21,6 +22,10 @@ class CondenseServiceProvider extends ServiceProvider
 
             return new CondenseClient($http);
         });
+
+        $this->app->singleton('condense.handler', fn () => new BufferHandler(
+            $this->app->make(CondenseHandler::class)
+        ));
     }
 
     public function boot() {

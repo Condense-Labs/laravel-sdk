@@ -10,9 +10,7 @@ class CondenseLogger
     public function __invoke()
     {
         return tap(new Logger('condense', [
-            new BufferHandler(
-                app(CondenseHandler::class)
-            )
+            app('condense.handler')
         ]))->pushProcessor(new CondenseProcessor);
     }
 }

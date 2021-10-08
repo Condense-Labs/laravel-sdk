@@ -15,6 +15,12 @@ class RequestMiddleware
             return Uuid::uuid4()->toString();
         });
 
+        if (
+            ($actionName = $request->header('X-Condense-Action')) &&
+            ($actionId = $request->header('X-Condense-Action-ID'))) {
+            app()->singleton('condense.action', fn() => ['name' => $actionName, 'id' => $actionId]);
+        }
+
         Log::debug('request started', [
             '_condense_type' => 'request.start',
             'request' => [
