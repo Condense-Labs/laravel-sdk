@@ -12,9 +12,7 @@ class CondenseProcessor
 
         if (app()->runningInConsole()) {
             $context = 'artisan';
-        }
-
-        if (app()->bound('request')) {
+        } elseif (app()->bound('request')) {
             $context = 'http';
         }
 
