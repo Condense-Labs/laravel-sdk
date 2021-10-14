@@ -11,9 +11,7 @@ class RequestMiddleware
 {
     public function handle(Request $request, \Closure $next)
     {
-        app()->singleton('requestId', function () {
-            return Uuid::uuid4()->toString();
-        });
+        app()->singleton('requestId', fn () => Uuid::uuid4()->toString());
 
         if (
             ($actionName = $request->header('X-Condense-Action')) &&
