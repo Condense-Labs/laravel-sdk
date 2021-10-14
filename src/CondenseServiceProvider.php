@@ -7,7 +7,7 @@ use Illuminate\Console\Events\CommandFinished;
 use Illuminate\Console\Events\CommandStarting;
 use Illuminate\Support\ServiceProvider;
 use Monolog\Handler\BufferHandler;
-use Ramsey\Uuid;
+use Ramsey\Uuid\Uuid;
 
 class CondenseServiceProvider extends ServiceProvider
 {
